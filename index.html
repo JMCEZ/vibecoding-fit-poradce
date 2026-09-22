@@ -155,6 +155,28 @@ section{padding:72px 0;border-top:1px solid var(--line);}
 .profile dt{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft);margin-bottom:4px;}
 .profile dd{margin:0;font-weight:700;font-size:16px;}
 
+.pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch;}
+@media (max-width:900px){.pricing{grid-template-columns:1fr;}}
+.price-card{
+  background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
+  padding:32px;display:flex;flex-direction:column;position:relative;
+}
+.price-card.featured{border-color:var(--leaf);box-shadow:0 0 0 1px var(--leaf), var(--shadow);}
+.price-badge{
+  position:absolute;top:-14px;left:50%;transform:translateX(-50%);
+  background:var(--leaf);color:#06140e;font-size:12px;font-weight:800;
+  padding:5px 14px;border-radius:999px;letter-spacing:.03em;white-space:nowrap;
+}
+.price-card h3{font-size:19px;margin:0 0 6px;font-weight:600;}
+.price-card .price-sub{color:var(--ink-soft);font-size:13.5px;margin:0 0 20px;}
+.price-card .price{display:flex;align-items:baseline;gap:6px;margin-bottom:24px;}
+.price-card .price .amount{font-family:'Fraunces',Georgia,serif;font-size:38px;font-weight:600;}
+.price-card .price .period{color:var(--ink-soft);font-size:14px;}
+.price-card ul{list-style:none;margin:0 0 28px;padding:0;display:flex;flex-direction:column;gap:12px;flex:1;}
+.price-card li{display:flex;gap:10px;font-size:14.5px;color:var(--ink-soft);align-items:flex-start;}
+.price-card li::before{content:"✓";color:var(--leaf-light);font-weight:800;flex-shrink:0;}
+.price-card .btn{width:100%;}
+
 .cta{
   background:linear-gradient(135deg,var(--leaf-dark),var(--leaf));
   border-radius:28px;padding:56px 40px;text-align:center;color:#06140e;
@@ -175,6 +197,7 @@ footer{border-top:1px solid var(--line);padding:36px 0;}
     <nav class="nav-links">
       <a href="#jak-to-funguje">Jak to funguje</a>
       <a href="#pro-koho">Pro koho je to</a>
+      <a href="#cenik">Ceník</a>
       <a href="#zacnete">Začít</a>
     </nav>
     <div class="nav-cta">
@@ -283,6 +306,57 @@ footer{border-top:1px solid var(--line);padding:36px 0;}
           <div class="num">3</div>
           <h3>Zeptejte se na zbytek dne</h3>
           <p>Kdykoliv se zeptejte, co jíst dál — dostanete konkrétní jídelníček, který sedí do vašeho cíle.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="cenik">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Ceník</h2>
+        <p>Vyberte si podle toho, jak často chcete kalorie sledovat. Plán můžete kdykoliv změnit.</p>
+      </div>
+      <div class="pricing">
+        <div class="price-card">
+          <h3>Zdarma</h3>
+          <p class="price-sub">Pro vyzkoušení a příležitostné sledování</p>
+          <div class="price"><span class="amount">0 Kč</span><span class="period">/ měsíc</span></div>
+          <ul>
+            <li>5 odhadů kalorií denně</li>
+            <li>Rozpad porcí a kcal po položkách</li>
+            <li>Výchozí modelový profil</li>
+            <li>Bez uložené historie dne</li>
+          </ul>
+          <a href="#zacnete" class="btn btn-ghost">Začít zdarma</a>
+        </div>
+
+        <div class="price-card featured">
+          <div class="price-badge">Nejoblíbenější</div>
+          <h3>Osobní</h3>
+          <p class="price-sub">Pro každodenní sledování kalorií</p>
+          <div class="price"><span class="amount">199 Kč</span><span class="period">/ měsíc</span></div>
+          <ul>
+            <li>Neomezené odhady kalorií</li>
+            <li>Doporučení jídelníčku na zbytek dne</li>
+            <li>Vlastní profil a kalorický cíl</li>
+            <li>Přehled a součet za celý den</li>
+            <li>Rozpad makroživin u jídel</li>
+          </ul>
+          <a href="#zacnete" class="btn btn-primary">Vybrat Osobní</a>
+        </div>
+
+        <div class="price-card">
+          <h3>Rodina</h3>
+          <p class="price-sub">Pro domácnost nebo malý tým</p>
+          <div class="price"><span class="amount">449 Kč</span><span class="period">/ měsíc</span></div>
+          <ul>
+            <li>Vše z plánu Osobní</li>
+            <li>Až 5 samostatných profilů</li>
+            <li>Sdílené denní přehledy</li>
+            <li>Prioritní podpora</li>
+          </ul>
+          <a href="#zacnete" class="btn btn-ghost">Vybrat Rodina</a>
         </div>
       </div>
     </div>
